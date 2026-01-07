@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: settings
+        label: Settings
+        file: content/site.json
+        fields:
+          - { name: heroName, label: Hero Name, widget: string }
+          - { name: overallCgpa, label: Overall CGPA, widget: string }
+          - { name: educationYear, label: Education Year, widget: string }
+          - name: certificates
+            label: Certificates
+            widget: list
+            field: { name: url, label: Image, widget: image }
+
